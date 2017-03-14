@@ -83,3 +83,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias mongods="mongod --dbpath /home/martin/Documents/Shargo/data/db --port 29018"
