@@ -3,3 +3,6 @@
 cp i3/config ~/.config/i3/config
 cp i3/i3blocks.conf ~/.i3blocks.conf
 cp ohmyzsh/.zshrc ~/.zshrc
+
+#apply config restarting i3
+i3-msg restart

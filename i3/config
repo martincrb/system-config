@@ -29,6 +29,10 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+#Function Keys
+bindsym $mod+F12 exec amixer -c 1 set Master 5%+
+bindsym $mod+F11 exec amixer -c 1 set Master 5%-
+bindsym $mod+F10 exec amixer -D pulse set Master 1+ toggle
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
