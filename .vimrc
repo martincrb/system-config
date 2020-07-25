@@ -22,7 +22,7 @@ imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
 " Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
-" set textwidth=79
+set textwidth=79
 set formatoptions=tcqrn1
 set tabstop=2
 set shiftwidth=2
@@ -47,8 +47,6 @@ set showcmd
 
 " Highlight matching pairs of brackets. Use the '%' character to jump between them.
 set matchpairs+=<:>
-
-" Display different types of white spaces.
 
 " Show line numbers
 set number
@@ -78,7 +76,11 @@ vnoremap <Space> zf
 " Automatically save and load folds
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview"
-
+let mapleader = ","
+noremap <leader>w :w<cr>
+noremap <leader>gs :CocSearch
+noremap <leader>fs :Files<cr>
+noremap <leader><cr> <cr><c-w>h:q<cr>
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
