@@ -1,6 +1,7 @@
 " Set compatibility to Vim only.
 set nocompatible
 set nolist
+set signcolumn=yes
 set rnu
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
@@ -80,6 +81,7 @@ let mapleader = ","
 noremap <leader>w :w<cr>
 noremap <leader>gs :CocSearch
 noremap <leader>fs :Files<cr>
+noremap <leader>fd :NERDTree<cr>
 noremap <leader><cr> <cr><c-w>h:q<cr>
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -91,8 +93,16 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'hashivim/vim-terraform' " Terraform syntax and commands
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 Plug 'vim-airline/vim-airline'
+Plug 'eslint/eslint'
+Plug 'preservim/nerdtree'
+Plug 'hashivim/vim-terraform'
+Plug 'vim-syntastic/syntastic'
+Plug 'juliosueiras/vim-terraform-completion'
+Plug 'ryanoasis/vim-devicons'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 let g:coc_global_extensions = [ 'coc-tsserver' ]
 
@@ -103,3 +113,5 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 :imap ii <Esc>
+" Terraform config
+let g:terraform_fmt_on_save=1
