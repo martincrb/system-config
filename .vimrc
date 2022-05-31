@@ -79,10 +79,12 @@ vnoremap <Space> zf
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview"
 let mapleader = ","
+
 noremap <leader>w :w<cr>
 noremap <leader>s :CocSearch 
 noremap <leader>f :Files<cr>
 noremap <leader>d :NERDTreeToggle<cr>
+
 noremap <leader><cr> <cr><c-w>h:q<cr>
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -104,6 +106,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'ryanoasis/vim-devicons'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 let g:coc_global_extensions = [ 'coc-tsserver' ]
