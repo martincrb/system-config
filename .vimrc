@@ -1,6 +1,7 @@
 " Set compatibility to Vim only.
 set nocompatible
 set nolist
+set signcolumn=yes
 set rnu
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
@@ -30,6 +31,7 @@ set softtabstop=2
 set expandtab
 set noshiftround
 
+set mouse=a
 " Display 5 lines above/below the cursor when scrolling with a mouse.
 set scrolloff=5
 " Fixes common backspace problems
@@ -78,22 +80,32 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview"
 let mapleader = ","
 noremap <leader>w :w<cr>
-noremap <leader>gs :CocSearch
-noremap <leader>fs :Files<cr>
+noremap <leader>s :CocSearch 
+noremap <leader>f :Files<cr>
+noremap <leader>d :NERDTreeToggle<cr>
 noremap <leader><cr> <cr><c-w>h:q<cr>
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'hashivim/vim-terraform' " Terraform syntax and commands
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 Plug 'vim-airline/vim-airline'
+Plug 'eslint/eslint'
+Plug 'preservim/nerdtree'
+Plug 'hashivim/vim-terraform'
+Plug 'vim-syntastic/syntastic'
+Plug 'juliosueiras/vim-terraform-completion'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
 let g:coc_global_extensions = [ 'coc-tsserver' ]
 
 let g:airline_powerline_fonts = 1
@@ -102,4 +114,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 :imap ii <Esc>
+" Terraform config
+let g:terraform_fmt_on_save=1
+" NERDTreeConfig
+let g:NERDTreeQuitOnOpen=1
