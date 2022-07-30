@@ -84,6 +84,8 @@ noremap <leader>s :CocSearch
 noremap <leader>f :Files<cr>
 noremap <leader>d :NERDTreeToggle<cr>
 noremap <leader><cr> <cr><c-w>h:q<cr>
+noremap <leader>tv :botright vnew <Bar> :terminal<cr>
+noremap <leader>th :botright new <Bar> :terminal<cr>
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -115,7 +117,6 @@ require'nvim-treesitter.configs'.setup {
   -- ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true,              -- false will disable the whole extension
-    -- disable = { "c", "rust" },  -- list of language that will be disabled
   },
 }
 EOF
@@ -134,6 +135,10 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+" Terminal exit mapping
+:tnoremap <Esc> <C-\><C-n>
+" Open terminal mapping
+
 :imap ii <Esc>
 " Terraform config
 let g:terraform_fmt_on_save=1
