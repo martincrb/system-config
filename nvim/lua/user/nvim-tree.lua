@@ -6,6 +6,16 @@ require('nvim-tree').setup({
       },
     },
   },
+  renderer = {
+    icons = {
+      glyphs = {
+        folder = {
+          arrow_closed = "+",
+          arrow_open = "-"
+        }
+      }
+    }
+  },
   actions = {
     open_file = {
       quit_on_open = true

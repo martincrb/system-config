@@ -1,5 +1,4 @@
 require('mason').setup()
-require('lualine').setup()
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.sumneko_lua.setup{
   settings = {
