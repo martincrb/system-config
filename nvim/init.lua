@@ -9,3 +9,5 @@ require 'user.lualine'
 require 'user.cmp'
 
 require 'user.settings'
+require 'user.lsp'
+require 'user.colorscheme'

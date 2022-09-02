@@ -42,5 +42,6 @@ require('packer').startup(function(use)
         })
     end
   })
+  use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
 end)
 
