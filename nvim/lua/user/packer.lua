@@ -43,5 +43,13 @@ require('packer').startup(function(use)
     end
   })
   use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
-end)
+  use { "Th3Whit3Wolf/space-nvim" }
+	use { 'rose-pine/neovim', as = 'rose-pine' }
 
+	use 'github/copilot.vim'
+
+	use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+	})
+end)
