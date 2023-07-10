@@ -13,6 +13,7 @@ keymap('t', '<Esc>', '<C-\\><C-n>')
 
 keymap('n', '<leader>f', ':Telescope find_files<cr>')
 keymap('n', '<leader>s', ':Telescope live_grep<cr>')
+keymap('n', '<leader>b', ':Telescope buffers<cr>')
 
 keymap('n', '<C-j>', '<C-W>j')
 keymap('n', '<C-k>', '<C-W>k')
