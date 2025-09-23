@@ -23,7 +23,7 @@ imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
 " Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
-set textwidth=79
+set textwidth=80
 set formatoptions=tcqrn1
 set tabstop=2
 set shiftwidth=2
